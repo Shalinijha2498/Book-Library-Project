@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/bookdetails.css}">
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css}"/>
+    
+    <title>Book Search Results</title>
+</head>
+<body>
+ <!-- navbar Starts -->
+ <header class="text-gray-400 bg-gray-900 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <img src="https://www.kindpng.com/picc/m/616-6169709_library-logo-of-a-person-holding-a-book.png" class="w-8 h-8 rounded-full">
+        <span class="ml-3 text-xl">Book Library</span>
+      </a>
+      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center cursor-pointer">
+        <a th:href="@{/}" class="mr-5 hover:text-white">Home</a>
+        <a th:href="@{/about}" class="mr-5 hover:text-white">About Us</a>
+        <a th:href="@{/contact}" class="mr-5 hover:text-white">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+  <hr class="bg-white"> 
+
+<!-- navbar ends -->
+
+<!-- creating a table to store data  -->
+  
+ <section>
+    <h1 class="text-2xl pb-4">Book Details</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th class="text-xl">Book Title</th>
+            <th class="text-xl">Author</th>
+            <th class="text-xl">Image</th>
+            <th class ="text-xl">Details</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr th:each="book: ${books}">
+            <td class="text-lg"
+              th:text="${book.title}" >
+            </td>
+            <td class="text-lg" 
+              th:text="${book.author}"> 
+            </td>
+            <td>
+              <img th:src="${book.image}" height="70px" width="70px"/>
+            </td>
+            <td >
+              <a th:href="${book.bookUrl}" target="_blank">
+                <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                <span>View Book</span>
+                </button>
+            </a> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+ 
+</body>
+</html>

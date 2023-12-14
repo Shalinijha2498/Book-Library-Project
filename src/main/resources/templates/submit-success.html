@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- <link rel="stylesheet" th:href="@{/css/bookdetails.css}" /> -->
+    <link
+      rel="stylesheet"
+      th:href="@{https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css}"
+    />
+
+    <title>Book Search Results</title>
+  </head>
+  <body style="background-image: url('https://source.unsplash.com/random/1920x1080'); background-size: 100vw 100vh;">
+    <!-- navbar Starts -->
+    <header class="text-gray-400 bg-gray-900 body-font">
+      <div
+        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+      >
+        <a
+          class="flex title-font font-medium items-center text-white mb-4 md:mb-0"
+        >
+          <img
+            src="https://www.kindpng.com/picc/m/616-6169709_library-logo-of-a-person-holding-a-book.png"
+            class="w-8 h-8 rounded-full"
+          />
+          <span class="ml-3 text-xl">Successfull</span>
+        </a>
+        <nav
+          class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center cursor-pointer"
+        >
+          <a th:href="@{/}" class="mr-5 hover:text-white">Home</a>
+          <a th:href="@{/about}" class="mr-5 hover:text-white">About Us</a>
+          <a th:href="@{/contact}" class="mr-5 hover:text-white">Contact Us</a>
+        </nav>
+        <button
+          class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"
+        >
+          Register
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-4 h-4 ml-1"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <hr class="bg-white" />
+
+    <!-- navbar ends -->
+
+    <h1 class="text-lg text-white text-center pt-40">
+      Thank you for contacting Us We will respond you as soon as Possible!!!!
+    </h1>
+
+    </body>
+</html>
